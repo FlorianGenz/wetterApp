@@ -1,0 +1,33 @@
+<div class="stars" id="stars" *ngIf="!day">
+  <div class="star" *ngFor="let star of stars; index as i" [id]="'starNr_' + i" [@inOutAnimation]></div>
+</div>
+
+<div id="umlaufBahn">
+  <div class="sun" *ngIf="day" [@inOutAnimation]></div>
+  <div class="moon" id="moon" *ngIf="!day" [@inOutAnimation]></div>
+</div>
+
+<div [className]="day ? 'weatherPanelDay' : 'weatherPanelNight'">
+  <div id="cityName">
+    <input #s id="input" type="search" value="{{city}}" (change)="city = s.value">
+  </div>
+  <div class="degreesWrapper">
+    <div id="weatherSvg"></div>
+    <div id="degrees">{{degrees}}°</div>
+  </div>
+  <div class="times">
+    <div class="sun">
+      <div style="display: flex">
+        <div id="sunriseSvg"></div>
+        <div id="sunrise">{{formatTime((sunrise.getUTCHours() + timeOffset), sunrise.getUTCMinutes() + timeOffsetM)}}</div>
+      </div>
+      <div style="display: flex">
+        <div id="sunsetSvg"></div>
+        <div id="sunset">{{formatTime((sunset.getUTCHours() + timeOffset), sunset.getUTCMinutes() + timeOffsetM)}}</div>
+      </div>
+    </div>
+    <div class="time">
+      ({{time}})
+    </div>
+  </div>
+</div>

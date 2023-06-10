@@ -1,0 +1,16 @@
+html, body{
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body{
+  background-color: #1f5c9b;
+  transition: background-color 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
