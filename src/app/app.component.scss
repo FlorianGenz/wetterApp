@@ -12,6 +12,15 @@
     color: #8b9b91;
     margin: 5px;
     z-index: 5;
+
+    a{
+      color: inherit;
+      text-decoration-line: none;
+    }
+
+    a:hover{
+      text-decoration-line: underline;
+    }
   }
 
   @media only screen and (max-width: 600px){
